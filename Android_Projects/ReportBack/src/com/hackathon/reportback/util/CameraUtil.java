@@ -34,8 +34,16 @@ public class CameraUtil extends SurfaceView implements SurfaceHolder.Callback {
 		camera = Camera.open();
 		// Need to work on this to fix portrait / landscape flip image skewing
 		// issue.
-		// int i = getResources().getConfiguration().orientation;
-		camera.setDisplayOrientation(90);
+
+		int orientation = getResources().getConfiguration().orientation;
+		// Determine Portrait or Landscape and adjust the camera orientation
+		// accordingly.
+		
+		if (orientation == 1) {
+			camera.setDisplayOrientation(90);
+		} else {
+			camera.setDisplayOrientation(0);
+		}
 
 		try {
 
@@ -50,9 +58,9 @@ public class CameraUtil extends SurfaceView implements SurfaceHolder.Callback {
 
 	// called when the surface is destroyed.
 	public void surfaceDestroyed(SurfaceHolder holder) {
-		
+
 		logMessageinDebug("In surfaceDestroyed");
-		
+
 		if (camera != null) {
 			camera.stopPreview();
 			// Releasing the resource.
@@ -61,9 +69,9 @@ public class CameraUtil extends SurfaceView implements SurfaceHolder.Callback {
 	}
 
 	public Camera.Parameters getParam() {
-		
+
 		logMessageinDebug("In getParam");
-		
+
 		Camera.Parameters parameters = camera.getParameters();
 
 		if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
@@ -81,11 +89,10 @@ public class CameraUtil extends SurfaceView implements SurfaceHolder.Callback {
 
 	}
 
-	
 	public void surfaceChanged(SurfaceHolder holder, int format, int w, int h) {
-		
+
 		logMessageinDebug("In surfaceChanged");
-		
+
 		// Connecting to the camera again upon surface change
 		Camera.Parameters parameters = camera.getParameters();
 		parameters.setPreviewSize(w, h);
@@ -99,10 +106,12 @@ public class CameraUtil extends SurfaceView implements SurfaceHolder.Callback {
 		}
 
 	}
-	
+
 	/**
 	 * Log the given message in Debug mode.
-	 * @param message to be logged.
+	 * 
+	 * @param message
+	 *            to be logged.
 	 */
 	private void logMessageinDebug(String message) {
 

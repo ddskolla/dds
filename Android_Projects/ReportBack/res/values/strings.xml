@@ -1,10 +1,28 @@
 <resources>
+
     <string name="app_name">ReportBack</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_core">CameraView</string>
-    <string name="settings_event_title">Event Name</string>
-    <string name="settings_email_list">Emails</string>
-    <string name="settings_email_subject">Email Subject</string>
-    <string name="settings_email_body">Email Body(if any)</string>
+    <string name="reviewphotos">Revire Photoes</string>
+    <string name="title_activity_about">About ReportBack</string>
+    <string name="about_text">ReportBack lets you record audio and take 
+                             photos of an event using your mobile device.
+                             Afterwards you can easily share the content
+                             through mail. </string>
+    <string name="email_subject">Subject</string>
+    <string name="email_email_address">Email Addresses</string>
+    <string name="email_body">Email Body (if any)</string>
+    <string name="vemail_subject">Event Reporting</string>
+    <string name="vemail_email_address">rajdissa@gmail.com</string>
+    <string name="vemail_body">Pleasefind attached, the Audio and images captured By : "Report Back"</string>
+    <string name="hint_email_email_address">Enter email address seperated with semicolens</string>
+    <string name="hint_email_subject">Report Back : See Attachments</string>
+    <string name="settings_save_button">Save</string>
+    <string name="settings_screen_instructions">Please enter the above details which 
+        										will be used in your e-mails. Kindly note that 
+        										this is a one time prompt and you will have the option of 
+        										changing these values from wethin the application.</string>
+    <color name="whote_colour">#FFFFFF</color>
+
 </resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources>
+    <string name="hello">مرحبا!</string>
+    <string name="app_name">SensorApplication</string>
+	<string name="open">Open</string>
+</resources>

@@ -3,8 +3,7 @@
     android:id="@+id/layout"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#adadad"
-    android:orientation="vertical" >
+    android:background="#adadad" >
 
     <FrameLayout
         android:id="@+id/preview"
@@ -15,26 +14,26 @@
 
     <ImageButton
         android:id="@+id/button_take_picture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dip"
+        android:layout_height="100dip"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:src="@drawable/ic_launcher" />
+        android:src="@drawable/camera" />
 
     <ImageButton
         android:id="@+id/button_record_audio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dip"
+        android:layout_height="100dip"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:src="@drawable/button_change" />
 
     <ImageButton
         android:id="@+id/button_send_mail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dip"
+        android:layout_height="100dip"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:src="@drawable/ic_launcher" />
+        android:src="@drawable/mail" />
 
 </RelativeLayout>

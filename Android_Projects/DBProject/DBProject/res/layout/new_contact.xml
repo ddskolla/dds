@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent" android:orientation="vertical">
+    <TextView android:text="New Contact Name" android:id="@+id/textView1" android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+    <EditText android:layout_width="match_parent"  android:layout_height="wrap_content" android:id="@+id/name_edit_text"></EditText>
+    <Button android:text="Add" android:layout_width="wrap_content" android:id="@+id/add_contact_button" android:layout_height="wrap_content"></Button>
+</LinearLayout>
