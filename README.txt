@@ -17,6 +17,7 @@ This application enables the user to record an audio clip while taking pictures 
 
 	* SensorsProjet - List all available sensors on the device and display their outputs in real time.
 
+	* Compass - A compass created usig the orientation sensor and a re-drawn view.
 
 REST Projects
 	*RESTOne - Contains code for REST web services. Built using Maven and deployed and tested on tomcat 6. Also Tested on an Android Device using the HTTPSampleProject explained above.
