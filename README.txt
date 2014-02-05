@@ -16,3 +16,7 @@ This application enables the user to record an audio clip while taking pictures 
 	* LBSProject - GET Latitude and Longetude and point out location on a map using google apis and Private/Public Keys.
 
 	* SensorsProjet - List all available sensors on the device and display their outputs in real time.
+
+
+REST Projects
+	*RESTOne - Contains code for REST web services. Built using Maven and deployed and tested on tomcat 6. Also Tested on an Android Device using the HTTPSampleProject explained above.
