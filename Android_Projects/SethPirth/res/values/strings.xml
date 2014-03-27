@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Seth Pirth</string>
+    <string name="action_settings">Settings</string>
+    <string name="about_heading">About - Seth Pirith</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="about_text">Seth Pirith App lets you listen to Buddhist Chants on the go.
+        Developed by : Dilan De Silva - dilan85desilva@gmail.com</string>
+
+</resources>
