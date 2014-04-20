@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dilan.pirith"
-    android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionCode="2"
+    android:versionName="1.1" >
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -17,7 +17,8 @@
             android:name="com.dilan.pirith.MainActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/app_name"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,6 +30,12 @@
             android:label="@string/about_heading"
             android:theme="@android:style/Theme.Dialog" >
         </activity>
+
+        <service
+            android:name=".AudioService"
+            android:icon="@drawable/bullet_icon_small"
+            android:label="@string/service_name" >
+        </service>
     </application>
 
 </manifest>

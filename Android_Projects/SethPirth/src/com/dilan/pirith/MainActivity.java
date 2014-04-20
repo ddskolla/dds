@@ -22,7 +22,7 @@ import android.widget.Toast;
 public class MainActivity extends Activity implements OnItemClickListener,
 		OnClickListener {
 
-	private MediaPlayer mediaPlayer;
+	private Intent playerService;
 	private ListView contactsListView;
 	private ListAdapter adapter;
 	private Button stopButton;
@@ -68,17 +68,15 @@ public class MainActivity extends Activity implements OnItemClickListener,
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 
-		if (mediaPlayer != null) {
-			mediaPlayer.stop();
-		}
-
 		Object o = arg0.getItemAtPosition(arg2);
 		String keyword = o.toString();
 		int resID = getResources().getIdentifier(
 				"raw/" + keyword.toLowerCase(), "raw", getPackageName());
 
-		mediaPlayer = MediaPlayer.create(this, resID);
-		mediaPlayer.start();
+		playerService = new Intent(this, AudioService.class);
+		playerService.putExtra("FLAG", "PLAY");
+		playerService.putExtra("RESOURCE_ID", resID);
+		startService(playerService);
 
 		if (stopButton != null && stopButton.getVisibility() == View.INVISIBLE) {
 
@@ -89,22 +87,23 @@ public class MainActivity extends Activity implements OnItemClickListener,
 	}
 
 	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+	}
+
+	@Override
 	protected void onPause() {
 		// TODO Auto-generated method stub
 		super.onPause();
-		if (mediaPlayer != null) {
-			mediaPlayer.stop();
-			mediaPlayer = null;
-		}
 	}
 
 	@Override
 	protected void onDestroy() {
 		// TODO Auto-generated method stub
 		super.onDestroy();
-		if (mediaPlayer != null) {
-			mediaPlayer.stop();
-			mediaPlayer = null;
+		if (null != playerService) {
+			stopService(playerService);
 		}
 	}
 
@@ -112,9 +111,10 @@ public class MainActivity extends Activity implements OnItemClickListener,
 	public void onClick(View arg0) {
 
 		if (arg0.getId() == R.id.button1) {
-			if (mediaPlayer != null) {
-				mediaPlayer.stop();
-			}
+
+			playerService.putExtra("FLAG", "STOP");
+			startService(playerService);
+
 			if (stopButton.getVisibility() == View.VISIBLE) {
 				stopButton.setVisibility(View.INVISIBLE);
 				Toast.makeText(this,
